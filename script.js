@@ -12,7 +12,8 @@ like.addEventListener('click',()=>{
 })
 backdrop.addEventListener('click', modal);
 function modal() {
-    backdrop.classList.remove('hidden');
+    // backdrop.classList.remove('hidden');
+    console.log('ghbdtn');
 }
 // vhod.addEventListener('click',()=>{
 //     // backdrop.classList.remove('hidden');
