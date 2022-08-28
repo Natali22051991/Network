@@ -14,4 +14,3 @@ echo "<p>Пароль: $_SESSION[password]</p>";
 echo '<p><a href="../index.php">Перейти на главную</a></p>';
 echo '<p><a href="exit.php">Выйти</a></p>';
 print_r($_SESSION);
-//$rigt_form = require '../rigth-side-menu.php';
