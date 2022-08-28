@@ -28,7 +28,7 @@ $errors = [];
                 $_SESSION['email'] = htmlspecialchars(trim($_POST['email']));
                 $_SESSION['login'] = htmlspecialchars(trim($_POST['login']));
                 $_SESSION['password'] = htmlspecialchars(trim($_POST['password']));
-//    list($errors, $input) = validate_form();
+
 
                 $image = $_FILES['avatar'];
 
