@@ -8,10 +8,6 @@ $pdo = require 'db_connect.php';
 // сессии
 $errors = [];
     if( isset($_SESSION['first_name']) ) { // если данные сессии установлены
-    // будем выводить приветствие
-//    echo '<h2>Привет, ' . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'] . '</h2>';
-//    echo '<p><a href="registration/user.php">Перейти в профиль</a></p>';
-//    echo '<p><a href="registration/exit.php">Выйти</a></p>';
         header('location:registration/user.php');
     } else {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') { // если отправлена форма
@@ -60,12 +56,6 @@ $errors = [];
             } else {
                 $errors['empty_error'] = 'Заполните все поля!!!';
                 header('location:registration.php?errors=empty_error');
-//                echo '<div class="backdrop">';
-//                echo '<div class="modal">';
-//                echo '<span>Заполните все поля!!!</span>';
-//                echo '<p><a href="registration.php">Перейти</a></p>';
-//                echo '</div>';
-//                echo '</div>';
             }
 
 
