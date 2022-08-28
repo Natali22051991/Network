@@ -12,6 +12,7 @@ like.addEventListener('click',()=>{
 })
 backdrop.addEventListener('click', modal);
 function modal() {
+    console.log("hello");
     // backdrop.classList.remove('hidden');
     console.log('ghbdtn');
 }
