@@ -1,209 +1,114 @@
-const backdrop = document.querySelector('.backdrop');
-const text = document.querySelector('#text');
-const table = document.querySelector('.table');
-const counterStep = document.querySelector('.counterStep');
-const counterWrong = document.querySelector('.counterWrong');
-const counterTime = document.querySelector('.counterTime');
-const trs = table.querySelectorAll('tr');
-const btnUp = document.querySelector('.up');
-const btnDown = document.querySelector('.down');
-const btnLeft = document.querySelector('.left');
-const btnRight = document.querySelector('.right');
-const informationBoard = document.querySelector('.information-board');
+const button = document.querySelector('img/otter/jpgsend');
+const button1 = document.querySelector('img/otter/jpgclear');
+const inputTextform = document.querySelector('.inputText');
+const txt1 = document.querySelector('img/otter/jpgtxt1');
+const txt2 = document.querySelector('img/otter/jpgtxt2');
+const txt3 = document.querySelector('img/otter/jpgtxt3');
+const txt4 = document.querySelector('img/otter/jpgtxt4');
+const txt5 = document.querySelector('img/otter/jpgtxt5');
+const txt6 = document.querySelector('img/otter/jpgtxt6');
+const txt7 = document.querySelector('img/otter/jpgtxt7');
+const paragraf = document.querySelector('img/otter/jpgblock');
+// получила элементы
+console.log(inputTextform.value);
 
-let timerID;
-const MAZE = [
-    [{ type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }],
-    [{ type: "player", player: true, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }],
-    [{ type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }],
-    [{ type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }],
-    [{ type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }],
-    [{ type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }],
-    [{ type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }],
-    [{ type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }],
-    [{ type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }],
-    [{ type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "wall", player: false, finish: false }, { type: "empty", player: false, finish: false }, { type: "finish", player: false, finish: true }]
-]
-draw();
+let txt;  // создала переменные
+let txt_len;
 
 
-function draw() {
-    trs.forEach((tr, y) => {
-        const tds = tr.querySelectorAll('td');
-        tds.forEach((td, x) => {
-            td.dataset.coordinateX = x;
-            td.dataset.coordinateY = y;
-            td.className = '';
-            td.classList.add(MAZE[y][x].type);
-        })
-    })
-    //console.log(MAZE)
+function getTxt(event) {
+    txt = inputTextform.value;
+    txt_len = txt.length;
+    console.log(txt);
+    txt1.textContent = getMainCount(txt); // подсчет кол-ва знаков по клику кнопки
+    txt2.textContent = getnWordsCount(txt); // подсчет кол-ва слов по клику кнопки
+    txt3.textContent = getShortesWordCount(txt); // подсчет самого короткого слова по клику кнопки
+    txt4.textContent = getlongestWordCount(txt); // подсчет самого длинного слова по клику кнопки
+    txt5.textContent = getOffersCount(txt); // подсчет количества предложений по клику кнопки
+    txt6.textContent = getLettersCount(txt); // подсчет количества букв по клику кнопки
+    txt7.textContent = getNumbersCount(txt); // подсчет количества цифр по клику кнопки
+
+}
+function deliteText(event) { // очистка поля ввода по клику кнопки
+    inputTextform.value = "";
+    getTxt(event); // очистка параграфа и возврат нулей по клику кнопки
 }
 
-let state = false;
-let i = 0;
-let j = 0;
 
-const x = 'data-coordinate-x';
-const y = 'data-coordinate-y';
+button.addEventListener('click', getTxt); // создала кнопку
+button1.addEventListener('click', deliteText); // создала кнопку
 
-const direct = {
-    up: "ArrowUp",
-    down: "ArrowDown",
-    left: "ArrowLeft",
-    right: "ArrowRight"
+
+function getStrSplitFilter(str = '') {
+    return !!str && !!str.length && typeof str === 'string'
+        ? str.replaceAll('—', ' ').split(/\s|\n|\?|\,|\.|\:|\-/).filter(el => !!el)
+        : null
+            ? null : 0
 }
 
-document.addEventListener('keydown', event => {
-    console.log(event);
-    if (!event.code.includes("Arrow")) {
-        return;
+
+function getMainCount(str = '') { // посчитала количество знаков
+    return !!str && !!str.length && typeof str === 'string'
+        ? getStrSplitFilter(str).join('').length
+        : 0
+            ? null : 0
+}
+
+
+function getnWordsCount(str = '') {
+    return !!str && !!str.length && typeof str === 'string'// посчитала количество слов
+        ? getStrSplitFilter(str).length
+        : 0
+            ? null : 0
+}
+
+
+function getShortesWordCount(str = '') { // посчитала самое короткое слово
+    let strSplit = getStrSplitFilter(str); //получила массив
+    if (!strSplit) {   //если немассив, то 0
+        return 0;
     }
-    document.querySelector(`#${event.code}`).classList.add('active');
-    console.log(event.code);
-    getValueAdjacentСell(event.code);
-    countClicks();
-
-})
-
-document.addEventListener('keyup', event => {
-    document.querySelector(`#${event.code}`).classList.remove('active');
-})
-
-backdrop.addEventListener('click', modal);
-
-btnUp.addEventListener('click', (upwardMovement));
-btnDown.addEventListener('click', (downwardMovement));
-btnLeft.addEventListener('click', (leftMovement));
-btnRight.addEventListener('click', (rightMovement));
-
-function countClicks() {
-    i++;
-    counterStep.textContent = 'Cделано шагов: ' + i;
-}
-/**
- * функция добавляющая 0, если число меньше 10
- * @param {number} number
- * @returns {string}
- */
-function addZero(number) {
-    return number < 10 ? '0' + number : number.toString();
-}
-
-function startTimer() {
-    let sec = 0;
-    let min = 0;
-    let hours = 0;
-    timerID = setInterval(() => {
-        sec = +sec + 1;
-        if (sec === 60) {
-            sec = 0;
-            min = +min + 1;
-        }
-        if (min === 60) {
-            sec = 0;
-            min = 0;
-            hours = +hours + 1
-        }
-        counterTime.innerHTML = '';
-        counterTime.textContent = `Время выполнения: ${addZero(hours)}:${addZero(min)}:${addZero(sec)}`;
-    }, 1000)
-}
-
-function stopTimer() {
-    clearInterval(timerID);
-}
-
-function getValueAdjacentСell(key) {
-    if (!state) {
-        startTimer();
-        state = true;
-    }
-    let isBreak = false;
-    for (let y = 0; y < MAZE.length; y++) {
-        if (isBreak) {
-            break;
-        }
-        for (let x = 0; x < MAZE[y].length; x++) {
-            if (MAZE[y][x].type === "player") {
-                //debugger;
-                handlerKey(y, x, key);
-                isBreak = true;
-                break;
-            }
+    let shortesWord = strSplit[0].length; //получила длину первого массива
+    for (let i = 0; i < strSplit.length; i++) {  // перебираем массив и сравниваем с первым, если его длина меньше длины
+        if (strSplit[i].length < shortesWord) { // если его длина меньше длины первого массива, то заменяем его на shortesWord
+            shortesWord = strSplit[i].length;
         }
     }
+    return shortesWord;
 }
 
-function handlerError(td) {
-    td.type = "error";
-    draw();
-    setTimeout(() => {
-        td.type = "player"
-        draw();
-    }, 500)
-}
 
-function end() {
-    let audio = new Audio();
-    audio.src = 'torjestvennyiy-zvuk-fanfar.mp3';
-    audio.autoplay = true;
-}
-
-function mistake() {
-    let audio = new Audio();
-    audio.src = 'mistake-zvuk.mp3';
-    audio.autoplay = true;
-}
-
-function handlerKey(y, x, direction) {
-    const current = MAZE[y][x];
-    let next;
-    try {
-        next = MAZE[direction === direct.up
-            ? y - 1 : direction === direct.down
-                ? y + 1 : y][direction === direct.left
-            ? x - 1 : direction === direct.right
-                ? x + 1 : x]
-    } catch {
-        next = null;
+function getlongestWordCount(str = '') {  //посчитала самое длинное слово
+    let strSplit = getStrSplitFilter(str); //получила массив
+    if (!strSplit) {   //если немассив, то 0
+        return 0;
     }
-    if (!next || next.type === 'wall') {
-        handlerError(MAZE[y][x]);
-        mistake();
-        j++;
-        counterWrong.textContent = 'Сделано ударов: ' + j;
-        return;
+    let longestWord = strSplit[0].length; //получила длину первого массива
+    for (let i = 0; i < strSplit.length; i++) {  // перебираем массив и сравниваем с первым, если его длина меньше длины
+        if (strSplit[i].length > longestWord) { // если его длина больше длины первого массива, то заменяем его на longestWord
+            longestWord = strSplit[i].length;
+        }
     }
-    current.type = "empty";
-    draw();
-    console.log(next.type)
-    if (next.type === "finish") {
-        end();
-        stopTimer();
-        modal();
-        text.innerHTML = document.querySelector('.information-board').innerHTML
-    }
-    next.type = "player";
-    draw();
+    return longestWord;
 }
-function upwardMovement() {
-    getValueAdjacentСell(direct.up);
-    countClicks();
 
+function getOffersCount(str = '') {  // посчитала количество предложений
+    return !!str && !!str.length && typeof str === 'string'
+        ? str.split(/[.!?](?!\d)/g).filter(Boolean).length
+        : null
+            ? null : 0;
 }
-function downwardMovement() {
-    getValueAdjacentСell(direct.down);
-    countClicks();
+
+
+function getLettersCount(str = '') { // посчитала количество букв
+    return !!str && !!str.length && typeof str === 'string'
+        ? str.match(/[a-zA-Zа-яА-Я]/g).length
+        : null
+            ? null : 0;
 }
-function leftMovement() {
-    getValueAdjacentСell(direct.left);
-    countClicks();
-}
-function rightMovement() {
-    getValueAdjacentСell(direct.right);
-    countClicks();
-}
-function modal() {
-    backdrop.classList.toggle('hidden');
+
+
+function getNumbersCount(str = '') { // посчитала количество цифр
+    let i = str.length;
+    return i - str.replace(/\d/gm, '').length;
 }

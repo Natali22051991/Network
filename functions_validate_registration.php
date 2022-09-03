@@ -1,14 +1,5 @@
 <?php
 
-$pdo = require '../db_connect.php';
-
-// вспомогательные функции
-
-/**
- *
- * функция проверки полей ввода
- * будет возвращать 2 массива, один с ошибками, другой с данными
- */
 
 function validate_form(){
 
@@ -26,6 +17,13 @@ function validate_form(){
     $input['$avatar'] = htmlspecialchars(trim($_FILES['avatar']));
     d($input);
 
+    $_SESSION['id'] = htmlspecialchars(trim($_POST['id']));
+    $_SESSION['first_name'] = htmlspecialchars(trim($_POST['first_name']));
+    $_SESSION['last_name'] = htmlspecialchars(trim($_POST['last_name']));
+    $_SESSION['country'] = htmlspecialchars(trim($_POST['country']));
+    $_SESSION['email'] = htmlspecialchars(trim($_POST['email']));
+    $_SESSION['login'] = htmlspecialchars(trim($_POST['login']));
+    $_SESSION['password'] = htmlspecialchars(trim($_POST['password']));
     // 3 проверяем введенные данные
     /**
      * функция для проверки имени
@@ -184,24 +182,24 @@ function show_form( $errors = [], $input = [] ){
 
     echo <<<_HTML_
 
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Регистрация</title>
-    <style>
-        div{
-            margin: 5px 0;
-        }
-        span{
-            color: red;
-        }
-    </style>
-</head>
-<body>
-    <h1>Регистрация</h1>
-    
-    <form action="" method="POST">
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Регистрация</title>-->
+<!--    <style>-->
+<!--        div{-->
+<!--            margin: 5px 0;-->
+<!--        }-->
+<!--        span{-->
+<!--            color: red;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Регистрация</h1>-->
+<!--    -->
+    <form action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="first_name">Имя</label>
                 <input type="text" name="first_name" placeholder="Введите имя" value="">
@@ -230,10 +228,6 @@ function show_form( $errors = [], $input = [] ){
              <div class="row">
                 <label for="avatar">Аватарка</label>
                 <input type="file" name="avatar" placeholder="Аватарка">
-            </div>           
-             <div class="row">
-                <label for="avatar">Аватарка</label>
-                <input type="file" name="avatar">
             </div>           
             <input type="submit" value="Зарегистрироваться">
         </form>

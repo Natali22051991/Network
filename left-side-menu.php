@@ -1,17 +1,16 @@
 <div class="left-side-menu">
     <div class="users">
-          <?php
-                if(isset($_SESSION['first_name'])){
-                    echo '<a href="registration/user.php"><img width="24" height="24" src="img/ellipse.svg" alt="ellipse"><p><b>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</b></p></a>';
+        <?php
+        if(isset($_SESSION['first_name'])){
+            echo "<a href='user.php'><img width='28' height='28' src='registration/$_SESSION[avatar]' alt='$_SESSION[avatar]'><p><b>$_SESSION[first_name] $_SESSION[last_name]</b></p></a>";
 
-                } else {
-                    echo '<a href="#"><img width="24" height="24" src="img/ellipse.svg" alt="ellipse"></a>';
+        } else {
+            echo '<a href="#"><img width="24" height="24" src="img/ellipse.svg" alt="ellipse"></a>';
 
-                    echo '<a id="name" href="#"><p><b>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</b></p></a>';
-                }
+            echo '<a id="name" href="#"><p><b>Пользователь</b></p></a>';
+        }
 
-            ?>
-
+        ?>
     </div>
     <div class="nav-group-navigator">
         <div class="navigator-item-selected">
@@ -20,7 +19,7 @@
                 <p><b>Новости</b></p>
             </a>
             <a href="#"><img class="newsFeed-2" width="15.75" height="3.63" src="img/NewsFeed-2.svg"
-                                         alt="NewsFeed-2"></a>
+                             alt="NewsFeed-2"></a>
         </div>
         <div class="navigator-item">
             <a href="#"><img width="24" height="24" src="img/message.svg" alt="message"></a>
@@ -89,9 +88,10 @@
         </div>
         <div class="navigator-item">
             <a href="#"><img width="24" height="24" src="img/rocket.svg" alt="rocket"></a>
-            <a href="games/game.php">
-                <p>Игры</p>
+            <a href="apps/apps.php">
+                <p>Приложения</p>
             </a>
         </div>
     </div>
 </div>
+

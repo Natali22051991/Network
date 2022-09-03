@@ -156,9 +156,10 @@
         <h2>Вы добрались до финиша!</h2>
         <p>Ваш результат:</p>
         <p id="text"></p>
+        <a class="exit" href="../apps.php">Выйти</a>
     </div>
 </div>
-<a class="exit" href="../../vhod.php">Выйти</a>;
+
 <script src="script.js"></script>
 </body>
 
