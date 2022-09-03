@@ -1,0 +1,19 @@
+body{
+    background-color: #737980;
+}
+
+h1 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.container{
+    display: flex;
+    width: 500px;
+    align-content: center;
+    justify-content: center;
+    background-color: #b9b6b6;
+    margin: 150px auto;
+    flex-direction: column;
+    border: 2px solid #272748;
+}

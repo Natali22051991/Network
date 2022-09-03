@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: block;
+    flex-direction: column;
+    padding: 15px;
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+
+
+}
+
+.table {
+    border-collapse: collapse;
+    border: 0.5px solid black;
+    margin: 0 auto;
+
+}
+
+tr {
+    background-color: rgb(228, 236, 234);
+}
+
+td {
+    width: 30px;
+    height: 30px;
+
+}
+
+.wall {
+    background-color: black;
+}
+
+.player {
+    background-color: #0200ff;
+}
+
+.finish {
+    background-color: greenyellow;
+}
+
+
+span {
+    display: block;
+    margin: 10px auto;
+    font-size: 20px;
+    white-space: nowrap;
+    text-align: center;
+
+}
+
+.scheme {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scheme button {
+    height: 30px;
+    width: 30px;
+}
+
+.bottom-btn {
+    margin-top: 4px;
+}
+
+.up {}
+
+.down {}
+
+.left {}
+
+.right {}
+
+.information-board {
+    padding: 3px;
+    margin-top: 10px;
+    border: 1px solid rgb(133, 133, 160);
+    color: rgb(63, 54, 43);
+    border-radius: 6px;
+}
+
+.error {
+    background-color: red;
+}
+
+
+.up:hover {
+    background-color: aquamarine;
+}
+
+.down:hover {
+
+    background-color: aquamarine;
+}
+
+.left:hover {
+
+    background-color: aquamarine;
+}
+
+.right:hover {
+
+    background-color: aquamarine;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(117, 117, 117, 0.514);
+    backdrop-filter: blur(5px);
+}
+
+.modal {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 70px;
+    margin: 0 10px;
+
+    animation-name: modal-animation;
+    animation-duration: 2s;
+}
+
+.hidden {
+    animation: modal-close 2s;
+    display: none;
+}
+
+.active {
+    border-color: #0200ff;
+}
+
+@keyframes modal-animation {
+    0% {
+        width: 100px;
+        min-height: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {}
+}
+
+#text {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 320px) {
+
+
+    .modal {
+        font-size: 6px;
+        padding: 15px;
+    }
+
+
+
+}

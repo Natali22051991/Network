@@ -23,6 +23,12 @@ span {
     background-color: #e5e5e586;
 }
 
+.user{
+    width: 200px;
+    height: auto;
+}
+
+
 /**
 * ********************************панель навигации*******************************************************
 */
@@ -143,14 +149,22 @@ span {
 
 .input-creat-post input {
     border: none;
-    width: 100%;
     padding: 5px;
+}
+.ava-post{
+    border-radius: 50%;
 }
 
 .footer-creat-post {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+#button{
+    border: none;
+    padding: 7px;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
 .footer-creat-post button {
@@ -174,7 +188,16 @@ span {
     gap: 20px;
 
 }
-
+/*****************************************кнопка добавления файлов*************************************/
+/*input[type="file"] {*/
+/*    display: none;*/
+/*}*/
+/*.custom-file-upload {*/
+/*    border: 1px solid #ccc;*/
+/*    display: inline-block;*/
+/*    padding: 6px 12px;*/
+/*    cursor: pointer;*/
+/*}*/
 .header-item-1 {
     display: flex;
     align-content: center;
@@ -190,7 +213,9 @@ span {
 .user-header-item-1 p {
     color: #0050B3;
 }
-
+.user-header-item-1 img{
+    border-radius: 50%;
+}
 
 .likes-item-1 {
     display: flex;
@@ -263,20 +288,22 @@ span {
     text-decoration-color: #0050B3;
     color: #262626;
 }
-
-.users {
+.users{
     display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    /* border: 3px solid #e1e4e4; */
-    padding: 2px;
-
+width: 200px;
 }
-
+.users a{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
 
 .users img {
     padding-top: 2px;
+    border-radius: 50%;
+}
+.users p{
+    padding-top: 3px;
 }
 
 .nav-group-navigator {
@@ -566,3 +593,33 @@ span {
 .registration{
     display: flex;
 }
+
+
+/***************************************инпуты файл*****************************/
+.upload-file__input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    width: 0.4px;
+    height: 0.4px;
+}
+
+.upload-file__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 240px;
+    background-color: #e1dfdfa8;
+    padding: 5px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.upload-file__icon {
+    width: 30px;
+    height: auto;
+    margin-right: 11px;
+}
+
+

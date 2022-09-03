@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2? family=Barlow:wght@600;900 & family= Fraunces:opsz,wght@9..144,700;9..144,900 & display=swap"
         rel="stylesheet">
-
+    <script src="script.js" defer></script>
     <title>Project</title>
 
 </head>
