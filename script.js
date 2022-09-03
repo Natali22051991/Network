@@ -14,8 +14,23 @@ likes.addEventListener('click',()=>{
 clicks.innerHTML = `${sum}`;
 });
 
+
 // backdrop.addEventListener('click', modal);
 // function modal() {
+
+console.log(backdrop,container,reg,names,vhod);
+
+like.addEventListener('click',()=>{
+    console.log('ghbdtn');
+})
+backdrop.addEventListener('click', modal);
+function modal() {
+    console.log("hello");
+    // backdrop.classList.remove('hidden');
+    console.log('ghbdtn');
+}
+// vhod.addEventListener('click',()=>{
+
 //     // backdrop.classList.remove('hidden');
 //     console.log('ghbdtn');
 // }
